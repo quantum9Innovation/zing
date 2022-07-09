@@ -1,0 +1,160 @@
+:root {
+  --theme: #05f;
+  --button: rgb(0, 119, 255);
+  --button-hover: rgb(53, 147, 255);
+  --hover: #0af;
+  --kbd: #aaa;
+  --slider: #d3d3d3;
+  --light: #eee;
+  --focus: rgb(230, 231, 255);
+  --bg: white;
+  --fg: black;
+}
+
+.dark {
+  --theme: #05f;
+  --button: rgb(0, 119, 255);
+  --button-hover: rgb(0, 85, 182);
+  --hover: rgb(0, 147, 221);
+  --kbd: #555;
+  --slider: #777;
+  --light: #444;
+  --focus: rgb(91, 92, 128);
+  --bg: #333;
+  --fg: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: helvetica, sans-serif;
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+#controls {
+  top: 0;
+  left: 0;
+  width: 90%;
+  margin-left: 5%;
+}
+
+#controls button {
+  padding: 1vh;
+  width: 150px;
+}
+
+#controls * {
+  display: inline-block;
+  margin-right: 1%;
+  margin-bottom: 3%;
+}
+
+#dark {
+  margin-right: 5%;
+}
+
+button {
+  background-color: var(--button);
+  color: white;
+  font: inherit;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  border: 5px solid var(--hover);
+}
+
+button kbd {
+  background-color: var(--theme);
+}
+
+kbd {
+  background-color: var(--kbd);
+  color: white;
+  font: monospace;
+  border: none;
+  border-radius: 10px;
+  padding: 1vh;
+  margin-right: 1%;
+}
+
+#speedcontainer {
+  margin: 0px;
+}
+
+#speed {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--slider);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+#speed:hover {
+  height: 12px;
+  border-radius: 6px;
+}
+
+#speed:hover::-webkit-slider-thumb {
+  background: var(--button-hover);
+  width: 17px;
+  height: 17px;
+  border-radius: 9px;
+  border: 4px solid var(--hover);
+}
+
+#speed::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  background: var(--button);
+}
+
+#speed::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  background: var(--button);
+}
+
+#speech {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.line {
+  padding: 1vh;
+  background-color: var(--light);
+  border-radius: 1vh;
+  font: helvetica, sans-serif;
+  font-size: 4vh;
+}
+
+.line:hover {
+  padding: 2vh;
+  border: 1vh solid var(--hover);
+}
+
+.active {
+  padding: 3vh;
+  border: 1vh solid var(--theme);
+  background-color: var(--focus);
+}
+
+.active:hover {
+  padding: 3vh;
+}

@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An open-source teleprompter for all the speeches">
+    <link rel="icon" href="favicon.png">
+    <title>Zing</title>
+</head>
+
+<link rel="stylesheet" href="./index.css">
+
+<body>
+    <div id="controls">
+        <button id="play">Play (<kbd>space</kbd>)</button>
+        <button id="fullscreen">Fullscreen (<kbd>k</kbd>)</button>
+        <button id="dark">Dark (<kbd>d</kbd>)</button>
+        <div class="rangecontainer" id="speedcontainer">
+            <p id="speeddes">Use arrow keys:</p>
+            <input type="range" min="0" max="20" step="0.5" value="10" class="range" id="speed">
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
