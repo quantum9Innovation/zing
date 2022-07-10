@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,17 +11,21 @@
 </head>
 
 <link rel="stylesheet" href="./index.css">
+<link rel="stylesheet" href="./config/styling.css">
 
 <body>
     <div id="controls">
-        <button id="play">Play (<kbd>space</kbd>)</button>
-        <button id="fullscreen">Fullscreen (<kbd>k</kbd>)</button>
-        <button id="dark">Dark (<kbd>d</kbd>)</button>
+        <button id="play" onclick="togglePlay()">Play (<kbd>space</kbd>)</button>
+        <button id="fullscreen" onclick="toggleFullscreen()">Fullscreen (<kbd>f</kbd>)</button>
+        <button id="dark" onclick="toggleDark()">Dark (<kbd>d</kbd>)</button>
         <div class="rangecontainer" id="speedcontainer">
-            <p id="speeddes">Use arrow keys:</p>
-            <input type="range" min="0" max="20" step="0.5" value="10" class="range" id="speed">
+            <p id="speeddes">Speed (use <kbd>←</kbd>/<kbd>→</kbd>)</p>
+            <input type="range" min="5" max="30" step="0.25" value="15" class="range" id="speed"
+                oninput="setSpeed(this.value)">
         </div>
     </div>
+    <div id="speech"></div>
+    <div id="timer">0:00</div>
 </body>
 <script src="./index.js"></script>
 

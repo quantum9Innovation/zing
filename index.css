@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 :root {
   --theme: #05f;
   --button: rgb(0, 119, 255);
@@ -8,6 +10,7 @@
   --light: #eee;
   --focus: rgb(230, 231, 255);
   --bg: white;
+  --tbg: rgba(255, 255, 255, 0.33);
   --fg: black;
 }
 
@@ -20,8 +23,13 @@
   --slider: #777;
   --light: #444;
   --focus: rgb(91, 92, 128);
-  --bg: #333;
+  --bg: rgb(51, 51, 51);
+  --tbg: rgba(51, 51, 51, 0.33);
   --fg: white;
+}
+
+::backdrop {
+  background-color: var(--bg);
 }
 
 * {
@@ -29,22 +37,38 @@
 }
 
 body {
-  font: helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   background-color: var(--bg);
   color: var(--fg);
 }
 
+#timer {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1vh;
+  background-color: var(--tbg);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  font-size: 4vh;
+}
+
 #controls {
+  position: sticky;
+  background-color: var(--tbg);
+  backdrop-filter: blur(10px);
   top: 0;
   left: 0;
   width: 90%;
-  margin-left: 5%;
+  padding: 5%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }
 
 #controls button {
   padding: 1vh;
-  width: 150px;
+  width: 200px;
 }
 
 #controls * {
@@ -60,7 +84,7 @@ body {
 button {
   background-color: var(--button);
   color: white;
-  font: inherit;
+  font-family: inherit;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -78,15 +102,24 @@ button kbd {
 kbd {
   background-color: var(--kbd);
   color: white;
-  font: monospace;
+  font-family: monospace;
   border: none;
   border-radius: 10px;
-  padding: 1vh;
+  padding: 5px;
   margin-right: 1%;
+}
+
+kbd:hover {
+  border: 3px solid var(--hover);
 }
 
 #speedcontainer {
   margin: 0px;
+  width: 200px;
+}
+
+#speeddes {
+  width: 100%;
 }
 
 #speed {
@@ -140,7 +173,6 @@ kbd {
   padding: 1vh;
   background-color: var(--light);
   border-radius: 1vh;
-  font: helvetica, sans-serif;
   font-size: 4vh;
 }
 
