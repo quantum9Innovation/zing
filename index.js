@@ -27,7 +27,7 @@ const getTranscript = URL => {
 const splitParagraphs = transcript => {
 
     // Detect double newlines and split into paragraphs
-    return transcript.split(/\n\n/g)
+    return transcript.split(/(?:\n\n|\r\n\r\n)/g)
     
 }
 const splitPunctuation = paragraph => {
