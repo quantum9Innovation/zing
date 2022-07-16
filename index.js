@@ -220,7 +220,7 @@ const calcTime = k => {
 
 // Start the teleprompter
 const teleprompt = () => {
-
+    
     // Logic for starting the teleprompter goes here
     if (!play) {
         setTimeout(teleprompt, 500)
@@ -237,7 +237,10 @@ const teleprompt = () => {
     // Move to next line after time has elapsed
     setTimeout(() => {
         
-        if (!play) return
+        if (!play) {
+            setTimeout(teleprompt, 500)
+            return
+        }
         next()
         teleprompt()
 
@@ -372,16 +375,15 @@ setSpeed(document.getElementById('speed').value)
 // Key inputs
 document.addEventListener('keydown', e => {
 
-    e.preventDefault()
     switch (e.key) {
 
-        case ' ': togglePlay(); break
-        case 'f': toggleFullscreen(); break
-        case 'd': toggleDark(); break
-        case 'ArrowUp': prev(); break
-        case 'ArrowDown': next(); break
-        case 'ArrowLeft': setSpeed(speed - 0.1); break
-        case 'ArrowRight': setSpeed(speed + 0.1); break
+        case ' ': togglePlay(); e.preventDefault(); break
+        case 'f': toggleFullscreen(); e.preventDefault(); break
+        case 'd': toggleDark(); e.preventDefault(); break
+        case 'ArrowUp': prev(); e.preventDefault(); break
+        case 'ArrowDown': next(); e.preventDefault(); break
+        case 'ArrowLeft': setSpeed(speed - 0.1); e.preventDefault(); break
+        case 'ArrowRight': setSpeed(speed + 0.1); e.preventDefault(); break
 
     }
 
