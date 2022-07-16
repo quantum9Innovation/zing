@@ -146,7 +146,7 @@ const inputLine = (line, k) => {
     let lineElement = document.createElement('p')
     lineElement.className = 'line'
     lineElement.id = k
-    lineElement.innerText = line
+    lineElement.innerHTML = line
     document.getElementById('speech').appendChild(lineElement)
 
 }
